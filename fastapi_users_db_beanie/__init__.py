@@ -23,6 +23,7 @@ class BeanieBaseUser(Generic[ID], Document):
     is_verified: bool = False
 
     class Settings:
+        name = "users"
         email_collation = Collation("en", strength=2)
         indexes = [
             IndexModel("email", unique=True),
